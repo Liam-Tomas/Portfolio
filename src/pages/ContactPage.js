@@ -5,7 +5,7 @@ import MyButton from '../components/utility/Button';
 import PlantGreenIMG from '../images/plantGreenIMG.jpeg';
 import PlantGreenDarkIMG from '../images/plantGreenDarkIMG.jpeg';
 import { useTheme } from 'styled-components';
-import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const MainContainer = styled.div`
   margin: 11px 11px 11px 12px;
@@ -13,7 +13,7 @@ const MainContainer = styled.div`
   padding-right: 360px;
   color: ${props => props.theme.text};
   position: relative; // Needed for absolute positioning of overlay
-  min-height: 50vh;
+  min-height: 45vh;
   margin-bottom: 60px;
   display: flex; 
   flex-direction: column;
@@ -116,10 +116,16 @@ const MyButtonContainer = styled.p`
     gap: 10px
 `
 
+const StyledEmail = styled.span`
+    color: ${props => props.theme.primary};
+    font-weight: 600;
+
+`
 
 
 
-function AboutPage({ themeVariant }) {
+
+function ContactPage({ themeVariant }) {
     const theme = useTheme();
 
     return (
@@ -128,14 +134,11 @@ function AboutPage({ themeVariant }) {
                 <MainContainer>
                     <HomeHeader>
                         {/* <HomeTopText>Hi, my name is</HomeTopText> */}
-                        <HomeTitle>Resume</HomeTitle>
-                        <HomeSubText>Click the link below to view PDF version of my resume.</HomeSubText>
+                        <HomeTitle>Contact</HomeTitle>
+                        <HomeSubText>Feel free to reach out to me by email: <StyledEmail>ltarmstrong94@gmail.com</StyledEmail></HomeSubText>
                         <MyButtonContainer>
-                            <MyButton padding="16px 20px" fontSize="1.1rem" icon={faFilePdf}>
+                            {/* <MyButton padding="16px 20px" fontSize="1.1rem" icon={faGithub}>
                                 Resume
-                            </MyButton>
-                            {/* <MyButton padding="16px 20px" fontSize="1.1rem" icon={faLinkedin} color={theme.text} backgroundColor={theme.buttonHoverBackground} hoverBackgroundColor={theme.buttonHoverSecondary}>
-                                LinkedIn
                             </MyButton> */}
                         </MyButtonContainer>
                     </HomeHeader>
@@ -144,5 +147,5 @@ function AboutPage({ themeVariant }) {
         </div >
     );
 }
-export default AboutPage;
+export default ContactPage;
 

@@ -126,10 +126,10 @@ const MyButtonContainer2 = styled.p`
 `
 
 const ProjectHeader = styled.h2`
-    margin-bottom: 60px;
+    margin-bottom: 10px;
     color: ${props => props.theme.text};
-    font-size: 45px;
-    font-weight: 500;
+    font-size: 60px;
+    font-weight: 600;
     
 `
 
@@ -250,6 +250,20 @@ const TechFlex2 = styled.div`
     color: ${props => props.theme.textAlt};
 
 `
+const HomeSubText = styled.p`
+    color: ${props => props.theme.text};
+    font-weight: 400;
+    font-size: 22px;
+    line-height:1.5;
+    letter-spacing: -1px;
+    margin: 0px;
+    margin-bottom: 30px;
+
+    @media (max-width: 868px) {
+        font-size: 1.1rem;
+        margin-top: 15px;
+
+    }`
 
 function ProjectSection() {
     const theme = useTheme();
@@ -258,6 +272,8 @@ function ProjectSection() {
         <ContentContainer>
 
             <ProjectHeader>My Work</ProjectHeader>
+            <HomeSubText>Check out some of my recent projects.</HomeSubText>
+
             <ProjectContainer>
 
                 <MainProjectContainer2>
@@ -269,7 +285,7 @@ function ProjectSection() {
                         <ItemHeader2>SFPD Crime Data Analysis</ItemHeader2>
                         <DescriptionContainer2>
                             <ItemText>
-                                This project represents an advanced analysis of incident data reported to the San Francisco Police Department (SFPD), focused on creating an interactive experience for users to understand local crime dynamics. My approach both visualizes and quantifies crime patterns across SF, combining advanced data analysis with a practical, user-centric application.
+                                This project represents an advanced analysis of incident data reported by the San Francisco Police Department (SFPD), focused on creating an interactive experience for users to understand local crime dynamics. My approach both visualizes and quantifies crime patterns across SF, combining advanced data analysis with a practical, user-centric application.
                             </ItemText>
                         </DescriptionContainer2>
                         <TechFlex2>
@@ -293,8 +309,7 @@ function ProjectSection() {
                         <ItemHeader>Recipe Finder App</ItemHeader>
                         <DescriptionContainer>
                             <ItemText>
-                                This project represents an advanced analysis of incident data reported to the San Francisco Police Department (SFPD), focused on creating an interactive experience for users to understand local crime dynamics. This approach both visualizes and quantifies urban crime patterns across SF, providing an interactive experience that combines advanced data analysis with practical, user-centric applications.
-                            </ItemText>
+                            Designed and Implemented a web-based recipe platform w/ Express.js for backend operations and React.js for UI. It employs MongoDB for data storage, with features like recipe creation, user favorites, and recipe search through the Spoonacular API. Firebase facilitates user authentication, while styling and theming are achieved using MUI and styled-components.                            </ItemText>
                         </DescriptionContainer>
                         <TechFlex>
                             <p>React</p>

@@ -8,6 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overscroll-behavior-y: none; /* Disables bounce effect on vertical scroll */
   overscroll-behavior-x: none; /* Disables bounce effect on vertical scroll */
+  letter-spacing: -.2px;
 
 }
 

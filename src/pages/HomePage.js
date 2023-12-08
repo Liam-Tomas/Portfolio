@@ -25,7 +25,7 @@ const MainContainer = styled.div`
   color: ${props => props.theme.text};
   position: relative; // Needed for absolute positioning of overlay
   min-height: 65vh;
-  margin-bottom: 60px;
+  margin-bottom: 35px;
   display: flex; 
   flex-direction: column;
 //   align-items: center;
@@ -95,10 +95,9 @@ const HomeHeader = styled.div`
 
 const HomeTitle = styled.h1`
     font-size: 88px;
-    letter-spacing: -1px;
     margin-top: 0px;
     margin-bottom: 0px;
-    font-weight: 500;
+    font-weight: 600;
     @media (max-width: 868px) {
         font-size: 2.8rem;
         margin-top: 20px;
@@ -106,7 +105,7 @@ const HomeTitle = styled.h1`
 `
 
 const HomeSubText = styled.p`
-    color: ${props => props.theme.textAlt};
+    color: ${props => props.theme.text};
     font-weight: 400;
     font-size: 22px;
     line-height:1.5;
@@ -144,7 +143,7 @@ const MyButtonContainer = styled.p`
 
 
 
-function HomePage() {
+const HomePage = ({ themeVariant }) => {
     const theme = useTheme();
 
     return (
@@ -154,7 +153,7 @@ function HomePage() {
                     <HomeHeader>
                         <HomeTopText>Hi, my name is</HomeTopText>
                         <HomeTitle>Liam Armstrong</HomeTitle>
-                        <HomeSubText>Currently a senior Computer Science student, I combine technical skill in programming and data management with a unique analytical perspective gained from my background in international economics and policy work. Check out some of my work below.</HomeSubText>
+                        <HomeSubText>Currently a senior Computer Science student, I combine technical skill in programming and data management with a unique analytical perspective gained from my background in international economics and policy. Check out some of my work below.</HomeSubText>
                         <MyButtonContainer>
                             <MyButton padding="16px 20px" fontSize="1.1rem" icon={faGithub}>
                                 Github
