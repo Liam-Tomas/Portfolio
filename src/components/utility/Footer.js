@@ -16,7 +16,9 @@ const SquigglyLine = styled.hr`
 
 const FooterContent = styled.div`
   padding-top: 0px;
-  color: ${props => props.theme.card}
+  font-weight: 600;
+  font-size: 16px;
+  color: ${props => props.theme.backgroundColor}
 `;
 
 const Footer = () => {

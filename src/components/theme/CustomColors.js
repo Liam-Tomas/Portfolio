@@ -103,7 +103,6 @@ export const darkTheme = {
     textAlt: 'rgb(197 199 197)',
     textOpp: '#1a1c18',
     textGrey: '#afb8c4',
-    backgroundColor: '#1f1f1f',
     backgroundColor: '#1b1c18',
     card: '#272e23',
     cardLighter: '#2d2f31',
@@ -121,7 +120,6 @@ export const darkTheme = {
     pcolor3: '#205107',
 
     buttonHover: '#89b96e',
-    buttonHoverSecondary: 'rgb(86, 100, 76)',
     buttonHoverSecondary: 'rgb(86, 100, 76)',
     overlayColor: 'rgb(156 214 125 / 20%)',
     overlayColor: 'rgb(61 74 54 / 55%)',
@@ -152,7 +150,8 @@ export const redLightTheme = {
     overlayColor: 'rgb(156 66 70 / 20%)', // Adjust for red theme
     overlayColor: 'rgb(241 206 205 / 55%)',
     redColor: '#9c4246',
-
+    buttonHover: '#a9555a',
+    buttonHoverSecondary: '#e4bfbf',
     greenColor: '#386a20',
     greyColor: '#1976d2',
 };
@@ -168,11 +167,13 @@ export const redDarkTheme = {
     backgroundColor: '#211a1a',
     card: 'rgb(54 42 41)',
     cardLight: 'rgb(47 37 37)',
-    cardLighter: '#2d2f31', // Adjust if needed
-    borderColor: '#28292a', // Adjust if needed
-    borderColor2: 'rgb(197 199 197)', // Adjust if needed
+    // cardLighter: '#2d2f31', // Adjust if needed
+    // borderColor: '#28292a', // Adjust if needed
+    // borderColor2: 'rgb(197 199 197)', // Adjust if needed
     hoverShadowColor: '#afb8c4', // Adjust for red theme
     buttonHoverBackground: '#5c3f3f', 
+    buttonHover: '#ff9fa0',
+    buttonHoverSecondary: '#6e5555',
     OppHoverBackground: 'rgb(194 231 254)', // Adjust for red theme
     homeBackground: '#262626', // Adjust for red theme
     overlayColor: 'rgb(255 179 180 / 25%)', // Adjust for red theme
@@ -207,11 +208,12 @@ export const lightGreyTheme = {
     greyColor: '#1976d2',
     greenColor: '#386a20',
     redColor: '#9c4246',
+    buttonHover: '#3288e4',
+    buttonHoverSecondary: '#aed7f4',
 }
 
 export const darkGreyTheme = {
     mode: 'dark',
-    primary:'#1976d2',
     primary: '#c0e7fe',
     secondary:'#c5c7c6',
     text: '#e3e3e3',
@@ -234,4 +236,6 @@ export const darkGreyTheme = {
     textOpp: 'rgb(31 31 31)', // Adjust if needed
     overlayColor: 'rgb(0 74 118 / 28%)',
     textDark: '#656a6f',
+    buttonHover: '#a8d0e6',
+    buttonHoverSecondary: '#205682',
 }

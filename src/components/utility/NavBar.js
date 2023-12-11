@@ -317,7 +317,7 @@ const NavbarContainer = styled.div`
   box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 5px 0px;
 
   @media (max-width: 868px) {
-    width: 80px; // Adjust width as needed
+    width: 250px; // Adjust width as needed
     transform: translateX(${props => props.isOpen ? '0' : '-100%'});
     transition: transform 0.3s ease;
   }
@@ -327,6 +327,8 @@ const NavbarItems = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+
 `;
 
 
@@ -369,6 +371,11 @@ const NavbarItem = styled.div`
       transform: scale(.92);
     }
   }
+  
+  @media (max-width: 768px) { // Adjust this breakpoint as needed
+    flex-direction: row; // Change to row in mobile mode
+  }
+
 `;
 
 const SubMenu = styled.div`
@@ -555,7 +562,7 @@ const Navbar = ({ theme, toggleTheme, setColorScheme }) => {
             </SubMenu>
           )}
           <NavbarItem ref={colorItemRef} onClick={toggleModal}>
-            <StyledIcon icon={faPalette} />
+            <StyledIcon icon={faPalette} isActive={isModalOpen} />
             Color
           </NavbarItem>
           <ColorSchemeModal

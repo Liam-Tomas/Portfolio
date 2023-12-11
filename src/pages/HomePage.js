@@ -158,7 +158,7 @@ const HomePage = ({ themeVariant }) => {
                             <MyButton padding="16px 20px" fontSize="1.1rem" icon={faGithub}>
                                 Github
                             </MyButton>
-                            <MyButton padding="16px 20px" fontSize="1.1rem" icon={faLinkedin} color={theme.text} backgroundColor={theme.buttonHoverBackground} hoverBackgroundColor={theme.buttonHoverSecondary}>
+                            <MyButton padding="16px 20px" fontSize="1.1rem" icon={faLinkedin} color={theme.secondary} backgroundColor={theme.buttonHoverBackground} hoverBackgroundColor={theme.buttonHoverSecondary}>
                                 LinkedIn
                             </MyButton>
                         </MyButtonContainer>

@@ -7,6 +7,8 @@ import { useTheme } from 'styled-components';
 import MyButton from '../components/utility/Button';
 import projectOneIMG from '../images/projectOneIMG.jpg'
 import projectOneDarkIMG from '../images/projectOneDarkIMG.jpg'
+import projectTwoIMG from '../images/projectTwoIMG.jpg'
+import projectTwoDarkIMG from '../images/projectTwoDarkIMG.jpg'
 
 const StyledLink = styled(Link)`
     text-decoration: none;
@@ -21,8 +23,8 @@ const ContentContainer = styled.div`
 const ProjectContainer = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 120px;
-    min-height: 170vh
+    gap: 100px;
+    min-height: 150vh
 `;
 
 const ProjectGrid = styled.div`
@@ -39,7 +41,7 @@ const ProjectGrid2 = styled.div`
     flex-direction: column;
     gap: 0px;
     align-items: flex-end;
-    
+    justify-content: center;
     @media (max-width: 768px) {
         
     grid-template-columns: 1fr;
@@ -67,13 +69,13 @@ const DescriptionContainer2 = styled.div`
     background-color: #1976D2; // Example blue color
     background: ${props => props.theme.cardLight};
     padding: 24px 25px;
-    border-radius: 10px;
+    border-radius: 5px;
     max-width: 650px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;    
     transition: background-color 0.15s ease, border-radius 0.3s ease;
     z-index: 1; // Ensure it's above the image
     margin-left: -280px; // Negative margin to extend into the left container
-
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;    
     @media (max-width: 868px) {
         padding: 24px 15px;
         margin-left: 0; // Reset margin for smaller screens
@@ -93,7 +95,6 @@ const ItemHeader = styled.h3`
 
 const ItemHeader2 = styled.h3`
     color: ${props => props.theme.text};
-
     font-weight: 600;
     margin-left: -250px; // Negative margin to extend into the right container
     font-size: 1.75rem;
@@ -110,7 +111,6 @@ const ItemText = styled.p`
 const MyButtonContainer = styled.p`
     display: flex;
     margin: 0px 0px;
-
     align-items: center;
     // justify-content: center;
     gap: 10px
@@ -133,26 +133,32 @@ const ProjectHeader = styled.h2`
     
 `
 
-const ProjectIMG = styled.div`
-  width: 100%;
-  height: 350px; // Set a specific height for the image
-  background: url(${(props) => props.theme.mode === 'dark' ? projectOneDarkIMG : projectOneIMG}) no-repeat center center;
-  background-size: cover;
-  filter: grayscale(100%);
-  
-  transition: filter 0.3s ease;
+// const ProjectIMG = styled.div`
+//     width: 100%;
+//     height: 350px; // Set a specific height for the image
+//     background: url(${(props) => props.theme.mode === 'dark' ? projectOneDarkIMG : projectOneIMG}) no-repeat center center;
+//     background-size: cover;
+//     filter: grayscale(100%);
+//     transition: filter 0.3s ease;
+// `;
+
+const ProjectIMG2 = styled.div`
+    width: 100%;
+    height: 325px; // Set a specific height for the image
+    background: url(${(props) => props.theme.mode === 'dark' ? projectOneDarkIMG : projectOneIMG}) no-repeat center center;
+    background-size: cover;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
 
 `;
 
-const ProjectIMG2 = styled.div`
-  width: 100%;
-  height: 350px; // Set a specific height for the image
-  background: url(${(props) => props.theme.mode === 'dark' ? projectOneDarkIMG : projectOneIMG}) no-repeat center center;
-  background-size: cover;
-  filter: grayscale(100%);
-    
-  transition: filter 0.3s ease;
-
+const ProjectTwoIMG = styled.div`
+    width: 100%;
+    height: 350px; // Set a specific height for the image
+    background: url(${(props) => props.theme.mode === 'dark' ? projectTwoDarkIMG : projectTwoIMG}) no-repeat center center;
+    background-size: cover;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
 `;
 
 const Overlay = styled.div`
@@ -179,18 +185,40 @@ const Overlay2 = styled.div`
   transition: opacity 0.3s ease;
 `;
 
-const IMGContainer = styled.div`
+// const IMGContainer = styled.div`
+//   position: relative;
+//   width: 60%; // Adjust width as necessary
+//   border-radius: 10px;
+//   overflow: hidden;
+//   box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 7px 0px;
+//   background: ${props => props.theme.cardLight};
+//   &:hover ${ProjectIMG} {
+//     filter: none; // Reveal the color on hover
+//   }
+
+//   &:hover ${Overlay} {
+//     opacity: .3; // Hide the overlay on hover
+
+//   }
+
+//   &:hover  {
+//     cursor: pointer;
+
+//   }
+// `;
+
+const IMGContainer2 = styled.div`
   position: relative;
-  width: 68%; // Adjust width as necessary
+  width: 54%;
   border-radius: 10px;
-  overflow: hidden;
+  overflow: hidden; 
   box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 7px 0px;
   background: ${props => props.theme.cardLight};
-  &:hover ${ProjectIMG} {
+  &:hover ${ProjectIMG2} {
     filter: none; // Reveal the color on hover
   }
 
-  &:hover ${Overlay} {
+  &:hover ${Overlay2} {
     opacity: .3; // Hide the overlay on hover
 
   }
@@ -201,18 +229,18 @@ const IMGContainer = styled.div`
   }
 `;
 
-const IMGContainer2 = styled.div`
+const IMG2Container = styled.div`
   position: relative;
-  width: 63.5%;
+  width: 60%; // Adjust width as necessary
   border-radius: 10px;
-  overflow: hidden; 
+  overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 7px 0px;
   background: ${props => props.theme.cardLight};
-  &:hover ${ProjectIMG2} {
+  &:hover ${ProjectTwoIMG} {
     filter: none; // Reveal the color on hover
   }
 
-  &:hover ${Overlay2} {
+  &:hover ${Overlay} {
     opacity: .3; // Hide the overlay on hover
 
   }
@@ -257,7 +285,7 @@ const HomeSubText = styled.p`
     line-height:1.5;
     letter-spacing: -1px;
     margin: 0px;
-    margin-bottom: 30px;
+    margin-bottom: 45px;
 
     @media (max-width: 868px) {
         font-size: 1.1rem;
@@ -309,7 +337,7 @@ function ProjectSection() {
                         <ItemHeader>Recipe Finder App</ItemHeader>
                         <DescriptionContainer>
                             <ItemText>
-                            Designed and Implemented a web-based recipe platform w/ Express.js for backend operations and React.js for UI. It employs MongoDB for data storage, with features like recipe creation, user favorites, and recipe search through the Spoonacular API. Firebase facilitates user authentication, while styling and theming are achieved using MUI and styled-components.                            </ItemText>
+                                Designed and Implemented a web-based recipe platform w/ Express.js for backend operations and React.js for UI. It employs MongoDB for data storage, with features like recipe creation, user favorites, and recipe search through the Spoonacular API. Firebase facilitates user authentication, while styling and theming are achieved using MUI and styled-components.                            </ItemText>
                         </DescriptionContainer>
                         <TechFlex>
                             <p>React</p>
@@ -325,36 +353,31 @@ function ProjectSection() {
                             </MyButton>
                         </MyButtonContainer>
                     </ProjectGrid>
-                    <IMGContainer>
-                        <ProjectIMG />
+                    <IMG2Container>
+                        <ProjectTwoIMG />
                         <Overlay />
-                    </IMGContainer>
+                    </IMG2Container>
                 </MainProjectContainer>
 
                 <MainProjectContainer2>
                     <IMGContainer2>
-                        <ProjectIMG2 />
                         <Overlay2 />
                     </IMGContainer2>
                     <ProjectGrid2>
                         <ItemHeader2>Data Structures Portfolio</ItemHeader2>
                         <DescriptionContainer2>
                             <ItemText>
-                                This project of data to the San Francisco Police Department (SFPD), focused on creating an interactive experience for users to understand local crime dynamics. My approach both visualizes and quantifies crime patterns across SF, combining advanced data analysis with a practical, user-centric application.
-                            </ItemText>
+                                Studied and implemented a comprehensive set of data structures in Python as part of my computer science curriculum. This collection encompasses essential structures such as Linked Lists, Stacks, and HashMaps, highlighting my hands-on experience with core algorithms and practical data manipulation techniques.                            </ItemText>
                         </DescriptionContainer2>
                         <TechFlex2>
                             <p>Python</p>
-                            <p>Javascript</p>
-                            <p>React</p>
-                            <p>GeoPandas</p>
-                            <p>SQL</p>
+                            <p>Data Structures</p>
+                            <p>Alogrithms</p>
                         </TechFlex2>
                         <MyButtonContainer2>
-                            <MyButton>Live</MyButton>
-                            {/* <MyButton color={theme.secondary} backgroundColor={theme.buttonHoverBackground} hoverBackgroundColor={theme.buttonHoverSecondary}>
+                            <MyButton color={theme.secondary} backgroundColor={theme.buttonHoverBackground} hoverBackgroundColor={theme.buttonHoverSecondary}>
                                 GitHub
-                            </MyButton> */}
+                            </MyButton>
                         </MyButtonContainer2>
                     </ProjectGrid2>
                 </MainProjectContainer2>
