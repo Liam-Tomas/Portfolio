@@ -47,6 +47,11 @@ const ModalContainer = styled.div`
     border-color: transparent ${props => props.theme.backgroundColor} transparent transparent;
     transform: translateY(-50%);
   }
+
+  @media (max-width: 868px) {
+    top: 145px;
+    left: 200px;
+  }
 `;
 
 

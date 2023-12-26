@@ -2,13 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCar, faHospital, faChartBar, faSquarePollVertical } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from 'styled-components';
 import MyButton from '../components/utility/Button';
 import projectOneIMG from '../images/projectOneIMG.jpg'
 import projectOneDarkIMG from '../images/projectOneDarkIMG.jpg'
 import projectTwoIMG from '../images/projectTwoIMG.jpg'
 import projectTwoDarkIMG from '../images/projectTwoDarkIMG.jpg'
+import DSIMG from '../images/DSIMG.jpg'
+import DSIMGLight from '../images/DSIMGLight.jpg'
+import SFMapLightIMG from '../images/SFMapLightIMG.png'
+import SFMapDarkIMG from '../images/SFMapDarkIMG.png'
 
 const StyledLink = styled(Link)`
     text-decoration: none;
@@ -17,22 +20,37 @@ const StyledLink = styled(Link)`
 
 const ContentContainer = styled.div`
     margin: 0px 130px;
+    overflow-x: hidden;
+    box-sizing: border-box; // Ensure padding is included in the width calculation
+
+    @media (max-width: 868px) {
+        margin: 0 auto; // Automatically adjust margins to center the container
+        padding: 0px;
+        width: 88%;
+    }
 
 `
 
 const ProjectContainer = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 100px;
-    min-height: 150vh
+    gap: 120px;
+    min-height: 159vh;
+
+    @media (max-width: 868px) {
+        gap: 40px;
+    }
 `;
 
 const ProjectGrid = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0px;
-    @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+
+    @media (max-width: 868px) {
+        margin: 0px 0px;
+        padding: 0px
+        align-items: center;
     }
 `;
 
@@ -42,9 +60,9 @@ const ProjectGrid2 = styled.div`
     gap: 0px;
     align-items: flex-end;
     justify-content: center;
-    @media (max-width: 768px) {
-        
-    grid-template-columns: 1fr;
+    @media (max-width: 868px) {
+        align-items: flex-start;
+
     }
 `;
 
@@ -60,6 +78,8 @@ const DescriptionContainer = styled.div`
     z-index: 1; // Ensure it's above the image
 
     @media (max-width: 868px) {
+        max-width: 400px;
+
         padding: 24px 15px;
         margin-right: 0; // Reset margin for smaller screens
     }
@@ -77,6 +97,7 @@ const DescriptionContainer2 = styled.div`
     margin-left: -280px; // Negative margin to extend into the left container
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;    
     @media (max-width: 868px) {
+        max-width: 400px;
         padding: 24px 15px;
         margin-left: 0; // Reset margin for smaller screens
     }
@@ -86,10 +107,14 @@ const DescriptionContainer2 = styled.div`
 const ItemHeader = styled.h3`
     color: ${props => props.theme.text};
     margin-right: -250px; // Negative margin to extend into the right container
-    // margin: 0px;
-    // margin-bottom: 5px;
     font-weight: 600;
     font-size: 1.75rem;
+    @media (max-width: 868px) {
+        margin-right: 0px;
+        font-size: 1.55rem;
+
+
+    }
 
 `
 
@@ -98,6 +123,12 @@ const ItemHeader2 = styled.h3`
     font-weight: 600;
     margin-left: -250px; // Negative margin to extend into the right container
     font-size: 1.75rem;
+    @media (max-width: 868px) {
+        margin-left: 0px;
+        font-size: 1.55rem;
+
+    }
+    
 
 `
 
@@ -130,36 +161,41 @@ const ProjectHeader = styled.h2`
     color: ${props => props.theme.text};
     font-size: 60px;
     font-weight: 600;
+
+    @media (max-width: 868px) {
+        font-size: 36px;
+        margin-bottom: 0px;
+    }
     
 `
 
-// const ProjectIMG = styled.div`
-//     width: 100%;
-//     height: 350px; // Set a specific height for the image
-//     background: url(${(props) => props.theme.mode === 'dark' ? projectOneDarkIMG : projectOneIMG}) no-repeat center center;
-//     background-size: cover;
-//     filter: grayscale(100%);
-//     transition: filter 0.3s ease;
-// `;
-
-const ProjectIMG2 = styled.div`
-    width: 100%;
-    height: 325px; // Set a specific height for the image
-    background: url(${(props) => props.theme.mode === 'dark' ? projectOneDarkIMG : projectOneIMG}) no-repeat center center;
-    background-size: cover;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
-
-`;
-
 const ProjectTwoIMG = styled.div`
     width: 100%;
-    height: 350px; // Set a specific height for the image
+    height: 320px; // Set a specific height for the image
     background: url(${(props) => props.theme.mode === 'dark' ? projectTwoDarkIMG : projectTwoIMG}) no-repeat center center;
     background-size: cover;
     filter: grayscale(100%);
     transition: filter 0.3s ease;
+
+    @media (max-width: 868px) {
+        width: 100%;
+        display: none;
+      }
 `;
+
+const ProjectThreeIMG = styled.div`
+    width: 100%;
+    height: 310px; // Set a specific height for the image
+    background: url(${(props) => props.theme.mode === 'dark' ? DSIMG : DSIMGLight}) no-repeat center center;
+    background-size: cover;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+
+    @media (max-width: 868px) {
+        width: 100%;
+        display: none;
+    
+`
 
 const Overlay = styled.div`
   position: absolute;
@@ -167,88 +203,116 @@ const Overlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-//   background: rgba(156, 214, 125, .1);
   background: ${props => props.theme.overlayColor};
   transition: opacity 0.3s ease;
 `;
 
 const Overlay2 = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-//   margin-right: -350px; // Negative margin to extend into the right container
-
-  right: 0;
-  bottom: 0;
-  background: rgba(156, 214, 125, .1);
-  background: ${props => props.theme.overlayColor};
-  transition: opacity 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: ${props => props.theme.overlayColor};
+    transition: opacity 0.3s ease;
 `;
 
-// const IMGContainer = styled.div`
-//   position: relative;
-//   width: 60%; // Adjust width as necessary
-//   border-radius: 10px;
-//   overflow: hidden;
-//   box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 7px 0px;
-//   background: ${props => props.theme.cardLight};
-//   &:hover ${ProjectIMG} {
-//     filter: none; // Reveal the color on hover
-//   }
 
-//   &:hover ${Overlay} {
-//     opacity: .3; // Hide the overlay on hover
-
-//   }
-
-//   &:hover  {
-//     cursor: pointer;
-
-//   }
-// `;
-
-const IMGContainer2 = styled.div`
-  position: relative;
-  width: 54%;
-  border-radius: 10px;
-  overflow: hidden; 
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 7px 0px;
-  background: ${props => props.theme.cardLight};
-  &:hover ${ProjectIMG2} {
+const IMGContainer3 = styled.div`
+    position: relative;
+    width: 49%;
+    border-radius: 10px;
+    overflow: hidden; 
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 7px 0px;
+    background: ${props => props.theme.cardLight};
+    &:hover ${ProjectThreeIMG} {
     filter: none; // Reveal the color on hover
-  }
+    }
 
-  &:hover ${Overlay2} {
+    &:hover ${Overlay2} {
     opacity: .3; // Hide the overlay on hover
 
-  }
+    }
 
-  &:hover  {
+    &:hover  {
     cursor: pointer;
 
-  }
+    }
+
+    @media (max-width: 868px) {
+    width: 100%;
+    display: none;
+    }
+`;
+
+const ProjectIMG2 = styled.div`
+    width: 100%;
+    height: 319px; // Set a specific height for the image
+    background: url(${(props) => props.theme.mode === 'dark' ? SFMapDarkIMG : SFMapLightIMG}) no-repeat center center;
+    background-size: cover;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+
+    @media (max-width: 868px) {
+        width: 100%;
+        display: none;
+      }
+
+`;
+
+const IMGContainer2 = styled.div`
+    position: relative;
+    width: 50%;
+    border-radius: 10px;
+    overflow: hidden; 
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 7px 0px;
+    background: ${props => props.theme.cardLight};
+   
+    &:hover ${ProjectIMG2} {
+        filter: none; // Reveal the color on hover
+    }
+
+    &:hover ${Overlay2} {
+        opacity: .3; // Hide the overlay on hover
+    }
+
+    &:hover  {
+        cursor: pointer;
+    }
+
+    @media (max-width: 868px) {
+        width: 100%;
+        display: none;
+    }
 `;
 
 const IMG2Container = styled.div`
-  position: relative;
-  width: 60%; // Adjust width as necessary
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 7px 0px;
-  background: ${props => props.theme.cardLight};
-  &:hover ${ProjectTwoIMG} {
+    position: relative;
+    width: 49%; // Adjust width as necessary
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 7px 0px;
+    background: ${props => props.theme.cardLight};
+    &:hover ${ProjectTwoIMG} {
     filter: none; // Reveal the color on hover
-  }
+    }
 
-  &:hover ${Overlay} {
+    &:hover ${Overlay} {
     opacity: .3; // Hide the overlay on hover
 
-  }
+    }
 
-  &:hover  {
+    &:hover  {
     cursor: pointer;
 
-  }
+    }
+
+    @media (max-width: 868px) {
+        width: 100%;
+        display: none;
+
+    }
+
 `;
 
 const MainProjectContainer = styled.div`
@@ -256,11 +320,25 @@ const MainProjectContainer = styled.div`
     position: relative; // Parent container positioned relatively
     gap: 250px;
 
+    @media (max-width: 868px) {
+        flex-direction: column;
+        gap: 0px;
+
+    }
+
 `
 const MainProjectContainer2 = styled.div`
     display: flex;
     position: relative; // Parent container positioned relatively
     gap: 180px;
+
+    @media (max-width: 868px) {
+        flex-direction: column;
+        gap: 0px;
+
+    }
+
+
 
 `
 const TechFlex = styled.div`
@@ -268,6 +346,10 @@ const TechFlex = styled.div`
     gap: 15px;
     margin-right: -160px; // Negative margin to extend into the right container
     color: ${props => props.theme.textAlt};
+
+    @media (max-width: 868px) {
+        margin: 0px;
+    }
 
 `
 
@@ -277,6 +359,11 @@ const TechFlex2 = styled.div`
     margin-left: -160px; // Negative margin to extend into the right container
     color: ${props => props.theme.textAlt};
 
+    @media (max-width: 868px) {
+        margin: 0px;
+
+    }
+
 `
 const HomeSubText = styled.p`
     color: ${props => props.theme.text};
@@ -285,13 +372,14 @@ const HomeSubText = styled.p`
     line-height:1.5;
     letter-spacing: -1px;
     margin: 0px;
-    margin-bottom: 45px;
+    margin-bottom: 55px;
 
     @media (max-width: 868px) {
         font-size: 1.1rem;
-        margin-top: 15px;
-
-    }`
+        margin-top: 5px;
+        margin-bottom: 25px;
+    }
+`
 
 function ProjectSection() {
     const theme = useTheme();
@@ -310,10 +398,10 @@ function ProjectSection() {
                         <Overlay2 />
                     </IMGContainer2>
                     <ProjectGrid2>
-                        <ItemHeader2>SFPD Crime Data Analysis</ItemHeader2>
+                        <ItemHeader2>SF Crime Geospatial Analysis</ItemHeader2>
                         <DescriptionContainer2>
                             <ItemText>
-                                This project represents an advanced analysis of incident data reported by the San Francisco Police Department (SFPD), focused on creating an interactive experience for users to understand local crime dynamics. My approach both visualizes and quantifies crime patterns across SF, combining advanced data analysis with a practical, user-centric application.
+                                This project represents an advanced analysis of incident data reported by the San Francisco Police Department (SFPD), focused on creating an interactive application for users to understand local crime dynamics. My approach both visualizes and quantifies crime patterns across SF, combining advanced data analysis with a practical, user-centric application.
                             </ItemText>
                         </DescriptionContainer2>
                         <TechFlex2>
@@ -360,9 +448,10 @@ function ProjectSection() {
                 </MainProjectContainer>
 
                 <MainProjectContainer2>
-                    <IMGContainer2>
+                    <IMGContainer3>
+                    <ProjectThreeIMG/>
                         <Overlay2 />
-                    </IMGContainer2>
+                    </IMGContainer3>
                     <ProjectGrid2>
                         <ItemHeader2>Data Structures Portfolio</ItemHeader2>
                         <DescriptionContainer2>

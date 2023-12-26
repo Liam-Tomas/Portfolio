@@ -1,35 +1,60 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const FooterContainer = styled.footer`
-  padding: 5px 0px;
-  margin-left: 180px; // Space from main content
+// margin: 30px 110px 0px 110px;
 `;
 
-const SquigglyLine = styled.hr`
-  border: none;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 100 20"><path d="M0,10 c20,-10 40,10 60,0 s40,-10 60,0" fill="none" stroke="#000" stroke-width="1.5"/></svg>');
-  background-repeat: repeat-x;
-  background-size: 100% 20px; // Adjust size as needed
-  height: 0px;
+const Divider = styled.div`
+  height: 1px;
+  background-color: ${props => props.theme.buttonHoverBackground};
+  margin: 10px 0px 10px 0px;
 `;
 
 const FooterContent = styled.div`
-  padding-top: 0px;
-  font-weight: 600;
+  padding: 10px 5px;
+  font-weight: 450;
   font-size: 16px;
-  color: ${props => props.theme.backgroundColor}
+  color: ${props => props.theme.buttonHoverBackground};
+
+  @media (max-width: 868px) {
+    font-size: .8rem;
+  }
 `;
 
+const FooterFlex = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+
+`;
+
+const StyledIcon = styled(FontAwesomeIcon)`
+    font-size: 1.4rem;
+    color: ${props => props.theme.buttonHoverBackground};
+
+`
+
+const FooterText = styled.p`
+
+`
+
 const Footer = () => {
-  return (
-    <FooterContainer>
-      <SquigglyLine />
-      <FooterContent>
-        <p>&copy; {new Date().getFullYear()} Created and Designed by Liam Armstrong</p>
-      </FooterContent>
-    </FooterContainer>
-  );
+    return (
+        <FooterContainer>
+            <FooterContent>
+                <Divider />
+                <FooterFlex>
+                    <FooterText>&copy; {new Date().getFullYear()} Created and Designed by Liam Armstrong; ltarmstrong94@gmail.com</FooterText>
+                    <StyledIcon icon={faGithub} />
+                </FooterFlex>
+            </FooterContent>
+        </FooterContainer>
+    );
 };
 
 export default Footer;

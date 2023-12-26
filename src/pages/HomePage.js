@@ -51,13 +51,14 @@ const MainContainer = styled.div`
       border-radius: 25px;
       z-index: 1;  // Ensure the overlay is above the background
   }
-  @media (max-width: 768px) {
+  @media (max-width: 868px) {
     align-items: '';
+    padding: 0px;
+
 
   }
 
 `;
-
 
 const ContentContainer = styled.div`
   position: relative; // Position relative to stack above the overlay
@@ -79,9 +80,6 @@ const IconContainer = styled.h1`
     display: none;
 `
 
-
-
-
 const HomeHeader = styled.div`
     padding: 3rem;
     margin: 0px 10px;
@@ -99,7 +97,7 @@ const HomeTitle = styled.h1`
     margin-bottom: 0px;
     font-weight: 600;
     @media (max-width: 868px) {
-        font-size: 2.8rem;
+        font-size: 42px;
         margin-top: 20px;
     }
 `
@@ -137,7 +135,11 @@ const MyButtonContainer = styled.p`
     display: flex;
     align-items: center;
     // justify-content: center;
-    gap: 10px
+    gap: 10px;
+    
+    @media (max-width: 868px) {
+    }
+    
 `
 
 
@@ -155,12 +157,28 @@ const HomePage = ({ themeVariant }) => {
                         <HomeTitle>Liam Armstrong</HomeTitle>
                         <HomeSubText>Currently a senior Computer Science student, I combine technical skill in programming and data management with a unique analytical perspective gained from my background in international economics and policy. Check out some of my work below.</HomeSubText>
                         <MyButtonContainer>
-                            <MyButton padding="16px 20px" fontSize="1.1rem" icon={faGithub}>
-                                Github
-                            </MyButton>
-                            <MyButton padding="16px 20px" fontSize="1.1rem" icon={faLinkedin} color={theme.secondary} backgroundColor={theme.buttonHoverBackground} hoverBackgroundColor={theme.buttonHoverSecondary}>
-                                LinkedIn
-                            </MyButton>
+                            <a href="https://github.com/Liam-Tomas" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                                <MyButton
+                                    padding="18px 22px"
+                                    fontSize="1.2rem"
+                                    icon={faGithub}
+                                >
+                                    GitHub
+                                </MyButton>
+                            </a>
+                            <a href="https://www.linkedin.com/in/liam-tomas-armstrong/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                                <MyButton 
+                                    padding="18px 22px" 
+                                    fontSize="1.2rem" 
+                                    icon={faLinkedin} 
+                                    color={theme.text} 
+                                    backgroundColor={theme.buttonHoverBackground} 
+                                    hoverBackgroundColor={theme.buttonHoverSecondary}
+                                >
+                                    LinkedIn
+                                </MyButton>
+                            </a>
+
                         </MyButtonContainer>
                     </HomeHeader>
                 </MainContainer>
