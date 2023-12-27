@@ -9,6 +9,7 @@ const backgroundColors = {
     green: (props) => props.theme.greenColor,
     red: (props) => props.theme.redColor,
     grey: (props) => props.theme.greyColor,
+    blue: (props) => props.theme.blueColor
 };
 
 const ModalBackdrop = styled.div`
@@ -27,12 +28,12 @@ const ModalContainer = styled.div`
   background-color: ${props => props.theme.backgroundColor};
   width: 100px; // Circular modal width
   height: 100px; // Circular modal height to maintain the circle shape
-  padding: 20px;
+  padding: 22px;
   border-radius: 50%; // Circular shape
   box-shadow: 3px 1px 15px 0px rgba(0, 0, 0, 0.2);
   top: 185px;
   left: 70px;
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
 
@@ -71,7 +72,7 @@ const ColorOption = styled.button`
   background-color: ${(props) => backgroundColors[props.color](props)};
   color: ${props => props.theme.textOpp};
   padding: 20px;
-  margin: 5px 0;
+  margin: 0px 5px;
   border: none;
   border-radius: 50%;
 
@@ -100,10 +101,12 @@ const ColorSchemeModal = ({ isModalOpen, toggleModal, setColorScheme }) => {
             <ModalContainer onClick={(e) => e.stopPropagation()}>
                     <TopRow>
                         <ColorOption color="green" onClick={() => handleColorChange('green')}></ColorOption>
+                        <ColorOption color="red" onClick={() => handleColorChange('red')}></ColorOption>
                     </TopRow>
                     <BottomRow>
-                        <ColorOption color="red" onClick={() => handleColorChange('red')}></ColorOption>
                         <ColorOption color="grey" onClick={() => handleColorChange('grey')}></ColorOption>
+                        <ColorOption color="blue" onClick={() => handleColorChange('blue')}></ColorOption>
+
                     </BottomRow>
             </ModalContainer>
         </ModalBackdrop>

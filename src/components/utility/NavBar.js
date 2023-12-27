@@ -62,7 +62,10 @@ const StyledIcon = styled(FontAwesomeIcon)`
   background-color: ${(props) => props.isActive ? props.theme.buttonHoverBackground : 'none'};
   color: ${(props) => props.isActive ? props.theme.primary : props.theme.text};
   transition: background-color 0.15s;
+  @media (max-width: 868px) {
+    background-color: ${(props) => props.isActive ? 'none': 'none'};
 
+  }
 `
 
 const NavbarItem = styled.div`
@@ -81,18 +84,18 @@ const NavbarItem = styled.div`
   color: ${props => props.theme.secondary};
   user-select: none;
   color: ${(props) => props.isActive ? props.theme.text : 'none'};
-  
+  background-color: ${(props) => props.isActive ? 'none': props.theme.card};
+
   @media (max-width: 868px) {
     width: 215px;
-    background-color: ${({ $isActive, theme }) => $isActive ? theme.buttonHoverBackground : 'none'};
-
+    background-color: ${(props) => props.isActive ? props.theme.buttonHoverBackground : 'none'};
     border-radius: 20px;
     padding: 4px 25px 4px 0px;
     gap:5px;
     font-size: 1.1rem;
     flex-direction: row; // Change to row in mobile mode
     &:hover {
-        background-color: ${props => props.theme.buttonHoverBackground};
+        background-color: ${props => props.theme.card};
      
       }
   }
@@ -259,6 +262,7 @@ const Navbar = ({ theme, toggleTheme, setColorScheme }) => {
           <NavbarLink to="/">
             <NavbarItem
               onClick={handleHomeClick}
+              isActive={location.pathname === '/'}
             >
               <StyledIcon icon={faHome} isActive={location.pathname === '/'}
               />
@@ -268,13 +272,14 @@ const Navbar = ({ theme, toggleTheme, setColorScheme }) => {
           <NavbarLink to="/about">
             <NavbarItem
               onClick={handleAboutClick}
+              isActive={location.pathname === '/about'}
             >
               <StyledIcon icon={faUser} isActive={location.pathname === '/about'} />
               Resume
             </NavbarItem>
           </NavbarLink>
           <NavbarLink to="/contact">
-            <NavbarItem onClick={handleAboutClick}>
+            <NavbarItem onClick={handleAboutClick} isActive={location.pathname === '/contact'}>
               <StyledIcon icon={faEnvelope} isActive={location.pathname === '/contact'} />
               Contact
             </NavbarItem>

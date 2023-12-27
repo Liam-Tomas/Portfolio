@@ -20,7 +20,7 @@ const StyledLink = styled(Link)`
 
 const ContentContainer = styled.div`
     margin: 0px 130px;
-    overflow-x: hidden;
+    // overflow-x: hidden;
     box-sizing: border-box; // Ensure padding is included in the width calculation
 
     @media (max-width: 868px) {
@@ -78,7 +78,6 @@ const DescriptionContainer = styled.div`
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;    
     transition: background-color 0.15s ease, border-radius 0.3s ease;
     z-index: 1; // Ensure it's above the image
-
     @media (max-width: 868px) {
         max-width: 400px;
 
@@ -265,7 +264,7 @@ const IMGContainer3 = styled.div`
 
 const ProjectIMG2 = styled.div`
     width: 100%;
-    height: 325px; // Set a specific height for the image
+    height: 320px; // Set a specific height for the image
     background: url(${(props) => props.theme.mode === 'dark' ? SFMapDarkIMG : SFMapLightIMG}) no-repeat center center;
     background-size: cover;
     filter: grayscale(100%);
@@ -280,7 +279,7 @@ const ProjectIMG2 = styled.div`
 
 const IMGContainer2 = styled.div`
     position: relative;
-    width: 50%;
+    width: 53%;
     border-radius: 10px;
     overflow: hidden; 
     box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 7px 0px;
@@ -477,7 +476,7 @@ function ProjectSection() {
                             <p>Express</p>
                         </TechFlex>
                         <MyButtonContainer>
-                            <a href="https://recipe-finder-foodhub.netlify.app/favorites" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                            <a href="https://recipe-finder-foodhub.netlify.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
                                 <MyButton>Live</MyButton>
                             </a>
                             <a href="https://github.com/Liam-Tomas/Recipe-Finder-App" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
@@ -488,7 +487,7 @@ function ProjectSection() {
                         </MyButtonContainer>
                     </ProjectGrid>
                     <IMG2Container>
-                        <a href="https://www.sfcrimemap.org/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                        <a href="https://recipe-finder-foodhub.netlify.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
                             <ProjectTwoIMG />
                             <Overlay />
                         </a>

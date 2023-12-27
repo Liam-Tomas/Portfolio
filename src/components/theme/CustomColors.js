@@ -85,9 +85,11 @@ export const lightTheme = {
     buttonHoverSecondary: '#b0c6a2',
     overlayColor: 'rgb(56 106 32 /30%)',
     overlayColor: 'rgb(202 214 188 / 55%)',
+    greyColor: '#0e7490',
     greenColor: '#386a20',
+    blueColor: '#3c405b',
     redColor: '#9c4246',
-    greyColor: '#1976d2',
+
 }    
 
 
@@ -126,7 +128,9 @@ export const darkTheme = {
     
     greenColor: '#9cd67d',
     redColor: '#ffb3b4',
-    greyColor: '#1976d2',
+    greyColor: '#b2ccd6',
+    blueColor: '#0ca5e9',
+
 }
 
 export const redLightTheme = {
@@ -149,11 +153,13 @@ export const redLightTheme = {
     homeBackground: 'rgb(194 231 254 / 40%)', // Adjust for red theme
     overlayColor: 'rgb(156 66 70 / 20%)', // Adjust for red theme
     overlayColor: 'rgb(241 206 205 / 55%)',
-    redColor: '#9c4246',
     buttonHover: '#a9555a',
     buttonHoverSecondary: '#e4bfbf',
+    greyColor: '#0e7490',
     greenColor: '#386a20',
-    greyColor: '#1976d2',
+    blueColor: '#3c405b',
+    redColor: '#9c4246',
+
 };
 
 export const redDarkTheme = {
@@ -179,130 +185,15 @@ export const redDarkTheme = {
     overlayColor: 'rgb(255 179 180 / 25%)', // Adjust for red theme
     overlayColor: 'rgb(92 63 63 / 55%)',
     redColor: '#ffb3b4',
-    greenColor: '#386a20',
-    greyColor: '#1976d2',
+    greenColor: '#9cd67d',
+    greyColor: '#b2ccd6',
+    blueColor: '#0ca5e9',
+
 };
 
-
-// export const lightGreyTheme = {
-//     mode: 'light',
-//     primary:'#1976d2',
-//     secondary: 'rgb(1 99 155)',
-//     secondary: '#1f1f1f',
-//     text: 'rgb(31 31 31)',
-//     textAlt: 'rgb(69 71 70)',
-//     textGrey: '#afb8c4',
-//     backgroundColor: '#ffffff',
-//     card: '#f4f6fc',
-//     cardLight: '#f8fafd',
-//     cardLighter: '#f4f6fc',
-//     cardLighter: '#ffffff',
-//     borderColor: '#e2e8f0',
-//     borderColor2: '#e2e8f0',
-//     hoverShadowColor: 'rgba(0, 0, 0, 0.2)',
-//     buttonHoverBackground: 'rgb(194 231 254)', // light blue for light theme hover
-//     OppHoverBackground: '#004a77', // darker shade for dark theme hover
-//     homeBackground: 'rgb(194 231 254 / 40%)',
-//     overlayColor: 'rgb(192 231 254 / 40%)',
-//     textOpp: '#e3e3e3', // Adjust if needed
-//     greyColor: '#1976d2',
-//     greenColor: '#386a20',
-//     redColor: '#9c4246',
-//     buttonHover: '#3288e4',
-//     buttonHoverSecondary: '#aed7f4',
-// }
-
-// export const darkGreyTheme = {
-//     mode: 'dark',
-//     primary: '#c0e7fe',
-//     secondary:'#c5c7c6',
-//     text: '#e3e3e3',
-//     textAlt: 'rgb(197 199 197)',
-//     textGrey: '#afb8c4',
-//     backgroundColor: '#1f1f1f',
-//     card: '#2d2f31',
-//     cardLighter: '#2d2f31',
-//     cardLight: '#28292a',
-//     borderColor: '#28292a',
-//     borderColor2: 'rgb(197 199 197)',
-//     hoverShadowColor: '#afb8c4', 
-//     buttonHoverBackground: '#004a77',
-//     buttonHoverBackground: '#3f4042',
-//     OppHoverBackground: 'rgb(194 231 254)',
-//     homeBackground: '#262626',
-//     cardBright: '#353940',
-//     greyColor: '#1976d2',
-//     greenColor: '#9cd67d',
-//     redColor: '#ffb3b4',
-//     textOpp: 'rgb(31 31 31)', // Adjust if needed
-//     overlayColor: 'rgb(0 74 118 / 28%)',
-//     textDark: '#656a6f',
-//     buttonHover: '#a8d0e6',
-//     buttonHoverSecondary: '#205682',
-// }
-
-
-// export const lightGreyTheme = {
-//     mode: 'light',
-//     primary:'#0957d0',
-//     secondary: 'rgb(1 99 155)',
-//     secondary: '#1f1f1f',
-//     text: 'rgb(31 31 31)',
-//     textAlt: 'rgb(69 71 70)',
-//     textGrey: '#afb8c4',
-//     backgroundColor: '#ffffff',
-//     card: '#f4f6fc',
-//     cardLight: '#f8fafd',
-//     cardLighter: '#f4f6fc',
-//     cardLighter: '#ffffff',
-//     borderColor: '#e2e8f0',
-//     borderColor2: '#e2e8f0',
-//     hoverShadowColor: 'rgba(0, 0, 0, 0.2)',
-//     buttonHoverBackground: '#e9ecef', // light blue for light theme hover
-//     OppHoverBackground: '#004a77', // darker shade for dark theme hover
-//     homeBackground: 'rgb(194 231 254 / 40%)',
-//     overlayColor: 'rgb(192 231 254 / 40%)',
-//     textOpp: '#fff',
-//     greyColor: '#1976d2',
-//     greenColor: '#386a20',
-//     redColor: '#9c4246',
-//     buttonHover: '#3288e4',
-//     buttonHoverSecondary: '#aed7f4',
-//     activeColor: '#a5b4fc',
-// }
-
-// export const darkGreyTheme = {
-//     mode: 'dark',
-//     primary: '#a8c7fa',
-//     secondary:'#c5c7c6',
-//     text: '#e3e3e3',
-//     textAlt: 'rgb(197 199 197)t',
-//     textGrey: '#afb8c4',
-//     backgroundColor: '#1f1f1f',
-//     card: '#2d2f31',
-//     cardLighter: '#2d2f31',
-//     cardLight: '#28292a',
-//     borderColor: '#28292a',
-//     borderColor2: 'rgb(197 199 197)',
-//     hoverShadowColor: '#afb8c4', 
-//     activeColor: '#3730a3',
-    
-//     buttonHoverBackground: '#3f4042',
-//     OppHoverBackground: 'rgb(194 231 254)',
-//     homeBackground: '#262626',
-//     cardBright: '#353940',
-//     greyColor: '#1976d2',
-//     greenColor: '#9cd67d',
-//     redColor: '#ffb3b4',
-//     textOpp: 'rgb(31 31 31)', // Adjust if needed
-//     overlayColor: 'rgb(0 74 118 / 28%)',
-//     textDark: '#656a6f',
-//     buttonHover: '#a8d0e6',
-//     buttonHoverSecondary: '#205682',
-// }
 export const lightGreyTheme = {
     mode: 'light',
-    primary:'#0f766e',
+    primary:'#0e7490',
     secondary: 'rgb(1 99 155)',
     secondary: '#0f1b61',
     text: '#0f1b61',
@@ -319,13 +210,14 @@ export const lightGreyTheme = {
     buttonHoverBackground: '#d3dae1', // light blue for light theme hover
     OppHoverBackground: '#004a77', // darker shade for dark theme hover
     homeBackground: 'rgb(194 231 254 / 40%)',
-    overlayColor: 'rgb(13 148 136 / 23%)',
+    overlayColor: 'rgb(13 116 144 / 30%)',
     textOpp: '#fff',
-    greyColor: '#1976d2',
+    greyColor: '#0e7490',
     greenColor: '#386a20',
+    blueColor: '#3c405b',
     redColor: '#9c4246',
-    buttonHover: '#0c625b',
-    buttonHoverSecondary: '#aed7f4',
+    buttonHover: '#0b6881',
+    buttonHoverSecondary: '#bdc5cc',
     activeColor: '#a5b4fc',
 }
 
@@ -336,8 +228,8 @@ export const darkGreyTheme = {
     text: '#b2ccd6',
     textAlt: '##768b9d',
     textGrey: '#1b252d',
-    backgroundColor: '#1c212b',
     backgroundColor: '#242933',
+    backgroundColor: '#21252e',
     card: '#2a303c',
     card: '#2f3542',
     cardLighter: '#2d2f31',
@@ -352,9 +244,10 @@ export const darkGreyTheme = {
     OppHoverBackground: 'rgb(194 231 254)',
     homeBackground: '#262626',
     cardBright: '#353940',
-    greyColor: '#1976d2',
+    greyColor: '#b2ccd6',
     greenColor: '#9cd67d',
     redColor: '#ffb3b4',
+    blueColor: '#0ca5e9',
     textOpp: 'rgb(31 31 31)', // Adjust if needed
     overlayColor: 'rgb(77 87 108 / 50%)',
     textDark: '#656a6f',
@@ -364,47 +257,48 @@ export const darkGreyTheme = {
 
 export const lightBlueTheme = {
     mode: 'light',
-    primary:'#0f766e',
+    primary:'#3c405b',
     secondary: 'rgb(1 99 155)',
     secondary: '#0f1b61',
-    text: '#0f1b61',
+    text: '#3c405b',
     textAlt: 'rgb(69 71 70)',
     textGrey: '#afb8c4',
-    backgroundColor: '#f8fafc',
-    card: '#e2e8f0',
-    cardLight: '#f1f5f9',
+    backgroundColor: '#fefbed',
+    card: '#f5f1de',
+    cardLight: '#f5f1de',
     cardLighter: '#f4f6fc',
     cardLighter: '#ffffff',
     borderColor: '#e2e8f0',
     borderColor2: '#e2e8f0',
     hoverShadowColor: 'rgba(0, 0, 0, 0.2)',
-    buttonHoverBackground: '#d3dae1', // light blue for light theme hover
+    buttonHoverBackground: '#aacebc', // light blue for light theme hover
     OppHoverBackground: '#004a77', // darker shade for dark theme hover
     homeBackground: 'rgb(194 231 254 / 40%)',
-    overlayColor: 'rgb(13 148 136 / 23%)',
+    overlayColor: 'rgb(130 178 154 / 35%)',
     textOpp: '#fff',
-    greyColor: '#1976d2',
+    greyColor: '#0e766e',
+    blueColor: '#3c405b',
     greenColor: '#386a20',
     redColor: '#9c4246',
-    buttonHover: '#0c625b',
-    buttonHoverSecondary: '#aed7f4',
-    activeColor: '#a5b4fc',
+    buttonHover: '#494e6f',
+    buttonHoverSecondary: '#9ec0af',
+    activeColor: 'rgb(224 122 93)',
 }
 
 export const darkBlueTheme = {
     mode: 'dark',
-    primary: '#62efbd',
+    primary: '#0ca5e9',
     secondary:'#b2ccd6',
-    text: '#b2ccd6',
-    textAlt: '##768b9d',
+    text: '#ffffff',
+    textAlt: '#93a4b8',
     textGrey: '#1b252d',
-    backgroundColor: '#1c212b',
-    backgroundColor: '#242933',
+    backgroundColor: '#0e172a',
     card: '#2a303c',
-    card: '#2f3542',
+    card: '#1e293b',
+    cardLight: '#191a2e',
+    cardLight: 'rgb(27 38 56)',
     cardLighter: '#2d2f31',
-    cardLight: '#242933',
-    cardLight: '#2a303c',
+
     borderColor: '#28292a',
     borderColor2: 'rgb(197 199 197)',
     hoverShadowColor: '#afb8c4', 
@@ -414,11 +308,12 @@ export const darkBlueTheme = {
     OppHoverBackground: 'rgb(194 231 254)',
     homeBackground: '#262626',
     cardBright: '#353940',
-    greyColor: '#1976d2',
+    greyColor: '#b2ccd6',
     greenColor: '#9cd67d',
+    blueColor: '#0ca5e9',
     redColor: '#ffb3b4',
     textOpp: 'rgb(31 31 31)', // Adjust if needed
-    overlayColor: 'rgb(77 87 108 / 50%)',
+    overlayColor: 'rgb(12 165 233 / 33%)',
     textDark: '#656a6f',
     buttonHover: '#58d6a9',
     buttonHoverSecondary: '#4c576c',

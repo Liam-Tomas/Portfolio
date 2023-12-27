@@ -17,6 +17,7 @@ import PlantGreenIMG from '../images/plantGreenIMG.jpeg';
 import PlantGreenDarkIMG from '../images/plantGreenDarkIMG.jpeg';
 import { useTheme } from 'styled-components';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import ThemePicker from '../components/theme/ThemePicker';
 
 const MainContainer = styled.div`
   margin: 11px 11px 11px 12px;
@@ -145,6 +146,12 @@ const MyButtonContainer = styled.p`
     
 `
 
+const ThemePickerContainer = styled.div`
+  position: absolute; // Absolute positioning within the relative parent
+  top: 20px; // Adjust as needed
+  right: 20px; // Adjust as needed
+  z-index: 10; // Ensure it's above other elements
+`;
 
 
 

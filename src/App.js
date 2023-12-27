@@ -7,7 +7,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import { GlobalStyles } from './components/theme/GlobalStyles';
 import { useDarkMode } from './components/theme/SetMode';
-import { lightTheme, darkTheme, redLightTheme, redDarkTheme, lightGreyTheme, darkGreyTheme } from './components/theme/CustomColors';
+import { lightTheme, darkTheme, redLightTheme, redDarkTheme, lightGreyTheme, darkGreyTheme, lightBlueTheme, darkBlueTheme } from './components/theme/CustomColors';
 import Footer from './components/utility/Footer';
 import ScrollToTop from './components/utility/ScrollToTop';
 
@@ -45,6 +45,9 @@ function App() {
       case 'red':
         currentTheme = redLightTheme;
         break;
+      case 'blue':
+        currentTheme = lightBlueTheme;
+        break;
       default:
         currentTheme = lightGreyTheme;
     }
@@ -56,6 +59,9 @@ function App() {
       case 'red':
         currentTheme = redDarkTheme;
         break;
+      case 'blue':
+        currentTheme = darkBlueTheme;
+        break;
       default:
         currentTheme = darkGreyTheme;
     }
@@ -65,13 +71,13 @@ function App() {
     <ThemeProvider theme={currentTheme}>
       <GlobalStyles />
       <Router>
-      <ScrollToTop />
+        <ScrollToTop />
         <FlexContainer>
           <Navbar theme={theme} toggleTheme={themeToggler} setColorScheme={setColorScheme} />
           <ContentContainer>
             <MainContent>
               <Routes>
-                <Route path="/" element={<HomePage />} />
+                <Route path="/" element={<HomePage theme={theme} themeToggler={themeToggler} setColorScheme={setColorScheme} />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 {/* ...other routes... */}

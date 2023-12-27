@@ -40,8 +40,13 @@ const MainContainer = styled.div`
       border-radius: 25px;
       z-index: 1;  // Ensure the overlay is above the background
   }
-  @media (max-width: 768px) {
+
+  @media (max-width: 868px) {
     align-items: '';
+    padding: 0px;
+    margin-top: 70px;
+    width: 94%;
+    min-height: 30vh;
 
   }
 
