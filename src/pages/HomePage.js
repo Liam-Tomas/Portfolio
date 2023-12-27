@@ -54,6 +54,8 @@ const MainContainer = styled.div`
   @media (max-width: 868px) {
     align-items: '';
     padding: 0px;
+    margin-top: 70px;
+    width: 94%;
 
 
   }
@@ -138,6 +140,7 @@ const MyButtonContainer = styled.p`
     gap: 10px;
     
     @media (max-width: 868px) {
+
     }
     
 `
@@ -159,8 +162,8 @@ const HomePage = ({ themeVariant }) => {
                         <MyButtonContainer>
                             <a href="https://github.com/Liam-Tomas" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
                                 <MyButton
-                                    padding="18px 22px"
-                                    fontSize="1.2rem"
+                                    padding="16px 21px" 
+                                    fontSize="18px" 
                                     icon={faGithub}
                                 >
                                     GitHub
@@ -168,8 +171,8 @@ const HomePage = ({ themeVariant }) => {
                             </a>
                             <a href="https://www.linkedin.com/in/liam-tomas-armstrong/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
                                 <MyButton 
-                                    padding="18px 22px" 
-                                    fontSize="1.2rem" 
+                                    padding="16px 21px" 
+                                    fontSize="18px" 
                                     icon={faLinkedin} 
                                     color={theme.text} 
                                     backgroundColor={theme.buttonHoverBackground} 
@@ -182,7 +185,7 @@ const HomePage = ({ themeVariant }) => {
                         </MyButtonContainer>
                     </HomeHeader>
                 </MainContainer>
-                <ProjectSection /> {/* Include the ProjectSection component here */}
+                <ProjectSection />
             </ContentContainer>
         </div >
     );

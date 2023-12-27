@@ -35,10 +35,12 @@ const ProjectContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 120px;
-    min-height: 159vh;
+    min-height: 212vh;
 
     @media (max-width: 868px) {
         gap: 40px;
+        min-height: 175vh;
+
     }
 `;
 
@@ -109,6 +111,7 @@ const ItemHeader = styled.h3`
     margin-right: -250px; // Negative margin to extend into the right container
     font-weight: 600;
     font-size: 1.75rem;
+    margin-top: 5px;
     @media (max-width: 868px) {
         margin-right: 0px;
         font-size: 1.55rem;
@@ -116,6 +119,13 @@ const ItemHeader = styled.h3`
 
     }
 
+`
+
+const ProjectTopHeader = styled.p`
+    margin: 0px;
+    margin-bottom: 16px;
+    color: ${props => props.theme.primary};
+    padding: 0px;
 `
 
 const ItemHeader2 = styled.h3`
@@ -147,6 +157,14 @@ const MyButtonContainer = styled.p`
     gap: 10px
 `
 
+const ViewMoreContainer = styled.div`
+    display: flex;
+    margin: 0px 0px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px
+`
+
 const MyButtonContainer2 = styled.p`
     display: flex;
     margin: 0px 0px;
@@ -161,17 +179,17 @@ const ProjectHeader = styled.h2`
     color: ${props => props.theme.text};
     font-size: 60px;
     font-weight: 600;
-
     @media (max-width: 868px) {
         font-size: 36px;
         margin-bottom: 0px;
     }
-    
 `
+
+
 
 const ProjectTwoIMG = styled.div`
     width: 100%;
-    height: 320px; // Set a specific height for the image
+    height: 325px; // Set a specific height for the image
     background: url(${(props) => props.theme.mode === 'dark' ? projectTwoDarkIMG : projectTwoIMG}) no-repeat center center;
     background-size: cover;
     filter: grayscale(100%);
@@ -185,7 +203,7 @@ const ProjectTwoIMG = styled.div`
 
 const ProjectThreeIMG = styled.div`
     width: 100%;
-    height: 310px; // Set a specific height for the image
+    height: 320px; // Set a specific height for the image
     background: url(${(props) => props.theme.mode === 'dark' ? DSIMG : DSIMGLight}) no-repeat center center;
     background-size: cover;
     filter: grayscale(100%);
@@ -220,7 +238,7 @@ const Overlay2 = styled.div`
 
 const IMGContainer3 = styled.div`
     position: relative;
-    width: 49%;
+    width: 45%;
     border-radius: 10px;
     overflow: hidden; 
     box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 7px 0px;
@@ -247,7 +265,7 @@ const IMGContainer3 = styled.div`
 
 const ProjectIMG2 = styled.div`
     width: 100%;
-    height: 319px; // Set a specific height for the image
+    height: 325px; // Set a specific height for the image
     background: url(${(props) => props.theme.mode === 'dark' ? SFMapDarkIMG : SFMapLightIMG}) no-repeat center center;
     background-size: cover;
     filter: grayscale(100%);
@@ -315,6 +333,8 @@ const IMG2Container = styled.div`
 
 `;
 
+
+
 const MainProjectContainer = styled.div`
     display: flex;
     position: relative; // Parent container positioned relatively
@@ -372,7 +392,7 @@ const HomeSubText = styled.p`
     line-height:1.5;
     letter-spacing: -1px;
     margin: 0px;
-    margin-bottom: 55px;
+    margin-bottom: 70px;
 
     @media (max-width: 868px) {
         font-size: 1.1rem;
@@ -380,6 +400,15 @@ const HomeSubText = styled.p`
         margin-bottom: 25px;
     }
 `
+
+const SquigglyLine = ({ color = 'black', width = 2 }) => (
+    <svg width="100%" height="20" viewBox="0 0 2000 20" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,10 Q25,-10 50,10 T100,10 T150,10 T200,10 T250,10 T300,10 T350,10 T400,10 T450,10 T500,10 T550,10 T600,10 T650,10 T700,10 T750,10 T800,10 T850,10 T900,10 T950,10 T1000,10 T1050,10 T1100,10 T1150,10 T1200,10 T1250,10 T1300,10 T1350,10 T1400,10 T1450,10 T1500,10 T1550,10 T1600,10 T1650,10 T1700,10 T1750,10 T1800,10 T1850,10 T1900,10 T1950,10 T2000,10" stroke={color} fill="none" strokeWidth={width} />
+    </svg>
+);
+
+
+
 
 function ProjectSection() {
     const theme = useTheme();
@@ -391,38 +420,51 @@ function ProjectSection() {
             <HomeSubText>Check out some of my recent projects.</HomeSubText>
 
             <ProjectContainer>
-
-                <MainProjectContainer2>
-                    <IMGContainer2>
-                        <ProjectIMG2 />
-                        <Overlay2 />
-                    </IMGContainer2>
-                    <ProjectGrid2>
-                        <ItemHeader2>SF Crime Geospatial Analysis</ItemHeader2>
-                        <DescriptionContainer2>
+                <MainProjectContainer>
+                    <ProjectGrid>
+                        <ProjectTopHeader>
+                            Featured Project
+                        </ProjectTopHeader>
+                        <ItemHeader>SF Crime Geospatial Analysis</ItemHeader>
+                        <DescriptionContainer>
                             <ItemText>
                                 This project represents an advanced analysis of incident data reported by the San Francisco Police Department (SFPD), focused on creating an interactive application for users to understand local crime dynamics. My approach both visualizes and quantifies crime patterns across SF, combining advanced data analysis with a practical, user-centric application.
                             </ItemText>
-                        </DescriptionContainer2>
-                        <TechFlex2>
+                        </DescriptionContainer>
+                        <TechFlex>
                             <p>Python</p>
                             <p>Javascript</p>
                             <p>React</p>
                             <p>GeoPandas</p>
                             <p>SQL</p>
-                        </TechFlex2>
-                        <MyButtonContainer2>
-                            <MyButton>Live</MyButton>
-                            <MyButton color={theme.secondary} backgroundColor={theme.buttonHoverBackground} hoverBackgroundColor={theme.buttonHoverSecondary}>
-                                GitHub
-                            </MyButton>
-                        </MyButtonContainer2>
-                    </ProjectGrid2>
-                </MainProjectContainer2>
+                        </TechFlex>
+                        <MyButtonContainer>
+                            <a href="https://www.sfcrimemap.org/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                                <MyButton>Live</MyButton>
+                            </a>
+                            <a href="https://github.com/Liam-Tomas/sfpd_theft_project" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                                <MyButton color={theme.secondary} backgroundColor={theme.buttonHoverBackground} hoverBackgroundColor={theme.buttonHoverSecondary}>
+                                    GitHub
+                                </MyButton>
+                            </a>
+                        </MyButtonContainer>
+                    </ProjectGrid>
+                    <IMGContainer2>
+                        <a href="https://www.sfcrimemap.org/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                            <ProjectIMG2 />
+                            <Overlay2 />
+                        </a>
+                    </IMGContainer2>
+                </MainProjectContainer>
+
+                <SquigglyLine color={theme.buttonHoverBackground} />  {/* Squiggly line divider */}
 
                 <MainProjectContainer>
                     <ProjectGrid>
-                        <ItemHeader>Recipe Finder App</ItemHeader>
+                        <ProjectTopHeader>
+                            Web Development
+                        </ProjectTopHeader>
+                        <ItemHeader>Recipe Finder Full Stack App</ItemHeader>
                         <DescriptionContainer>
                             <ItemText>
                                 Designed and Implemented a web-based recipe platform w/ Express.js for backend operations and React.js for UI. It employs MongoDB for data storage, with features like recipe creation, user favorites, and recipe search through the Spoonacular API. Firebase facilitates user authentication, while styling and theming are achieved using MUI and styled-components.                            </ItemText>
@@ -435,42 +477,68 @@ function ProjectSection() {
                             <p>Express</p>
                         </TechFlex>
                         <MyButtonContainer>
-                            <MyButton>Live</MyButton>
-                            <MyButton color={theme.secondary} backgroundColor={theme.buttonHoverBackground} hoverBackgroundColor={theme.buttonHoverSecondary}>
-                                GitHub
-                            </MyButton>
+                            <a href="https://recipe-finder-foodhub.netlify.app/favorites" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                                <MyButton>Live</MyButton>
+                            </a>
+                            <a href="https://github.com/Liam-Tomas/Recipe-Finder-App" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                                <MyButton color={theme.secondary} backgroundColor={theme.buttonHoverBackground} hoverBackgroundColor={theme.buttonHoverSecondary}>
+                                    GitHub
+                                </MyButton>
+                            </a>
                         </MyButtonContainer>
                     </ProjectGrid>
                     <IMG2Container>
-                        <ProjectTwoIMG />
-                        <Overlay />
+                        <a href="https://www.sfcrimemap.org/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                            <ProjectTwoIMG />
+                            <Overlay />
+                        </a>
                     </IMG2Container>
                 </MainProjectContainer>
 
-                <MainProjectContainer2>
-                    <IMGContainer3>
-                    <ProjectThreeIMG/>
-                        <Overlay2 />
-                    </IMGContainer3>
-                    <ProjectGrid2>
-                        <ItemHeader2>Data Structures Portfolio</ItemHeader2>
-                        <DescriptionContainer2>
+                <SquigglyLine color={theme.buttonHoverBackground} />  {/* Squiggly line divider */}
+
+                <MainProjectContainer>
+                    <ProjectGrid>
+                        <ProjectTopHeader>
+                            Student Project
+                        </ProjectTopHeader>
+                        <ItemHeader>Data Structures Portfolio</ItemHeader>
+                        <DescriptionContainer>
                             <ItemText>
-                                Studied and implemented a comprehensive set of data structures in Python as part of my computer science curriculum. This collection encompasses essential structures such as Linked Lists, Stacks, and HashMaps, highlighting my hands-on experience with core algorithms and practical data manipulation techniques.                            </ItemText>
-                        </DescriptionContainer2>
-                        <TechFlex2>
+                                Studied and implemented a comprehensive set of data structures in Python as part of my computer science curriculum. This collection encompasses essential structures such as Linked Lists, Stacks, and HashMaps, highlighting my hands-on experience with core algorithms and practical data manipulation techniques.
+                            </ItemText>
+                        </DescriptionContainer>
+                        <TechFlex>
                             <p>Python</p>
                             <p>Data Structures</p>
                             <p>Alogrithms</p>
-                        </TechFlex2>
-                        <MyButtonContainer2>
-                            <MyButton color={theme.secondary} backgroundColor={theme.buttonHoverBackground} hoverBackgroundColor={theme.buttonHoverSecondary}>
-                                GitHub
-                            </MyButton>
-                        </MyButtonContainer2>
-                    </ProjectGrid2>
-                </MainProjectContainer2>
+                        </TechFlex>
+                        <MyButtonContainer>
+                            <a href="https://github.com/Liam-Tomas/Data-Structures-Portfolio" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                                <MyButton color={theme.secondary} backgroundColor={theme.buttonHoverBackground} hoverBackgroundColor={theme.buttonHoverSecondary}>
+                                    GitHub
+                                </MyButton>
+                            </a>
+                        </MyButtonContainer>
+                    </ProjectGrid>
+                    <IMGContainer3>
+                        <a href="https://github.com/Liam-Tomas/Data-Structures-Portfolio" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                            <ProjectThreeIMG />
+                            <Overlay2 />
+                        </a>
+                    </IMGContainer3>
+                </MainProjectContainer>
+                <ViewMoreContainer>
+                    <a href="https://github.com/Liam-Tomas" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
 
+                        <MyButton padding="14px 20px"
+                            fontSize="18px"
+                            color={theme.text}
+                            backgroundColor={theme.buttonHoverBackground}
+                            hoverBackgroundColor={theme.buttonHoverSecondary}>View More
+                        </MyButton>
+                    </a>
+                </ViewMoreContainer>
             </ProjectContainer>
         </ContentContainer>
     );

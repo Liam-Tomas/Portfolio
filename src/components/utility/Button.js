@@ -20,7 +20,7 @@ const RippleSpan = styled.span`
 `;
 
 const StyledButton = styled.button`
-    padding: ${props => props.padding || '10px 15px'};
+    padding: ${props => props.padding || '12px 17px'};
     font-family: 'Metropolis', sans-serif;
     font-weight: 500;
     background-color: ${props => props.backgroundColor || props.theme.primary}; // Use backgroundColor prop
