@@ -120,7 +120,10 @@ const MyButtonContainer = styled.p`
     gap: 10px
 `
 
-
+const StyledLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+`;
 
 
 function AboutPage({ themeVariant }) {
@@ -132,12 +135,18 @@ function AboutPage({ themeVariant }) {
                 <MainContainer>
                     <HomeHeader>
                         {/* <HomeTopText>Hi, my name is</HomeTopText> */}
+
                         <HomeTitle>Resume</HomeTitle>
                         <HomeSubText>Click the link below to view PDF version of my resume.</HomeSubText>
                         <MyButtonContainer>
-                            <MyButton padding="16px 20px" fontSize="1.1rem" icon={faFilePdf}>
-                                Resume
-                            </MyButton>
+                            <StyledLink
+                                href="https://drive.google.com/file/d/1HqfoX-A4K9_1FUmVOCWciYoy6UUNOJOI/view?usp=sharing"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >                                <MyButton padding="16px 20px" fontSize="1.1rem" icon={faFilePdf}>
+                                    Resume
+                                </MyButton>
+                            </StyledLink>
                             {/* <MyButton padding="16px 20px" fontSize="1.1rem" icon={faLinkedin} color={theme.text} backgroundColor={theme.buttonHoverBackground} hoverBackgroundColor={theme.buttonHoverSecondary}>
                                 LinkedIn
                             </MyButton> */}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
 import Navbar from './components/utility/NavBar';
@@ -33,7 +33,7 @@ const MainContent = styled.div`
 
 function App() {
   const [theme, themeToggler] = useDarkMode(); // Use the custom hook
-  const [colorScheme, setColorScheme] = useState(''); // New state for color scheme
+  const [colorScheme, setColorScheme] = useState(window.localStorage.getItem('colorScheme') || 'green'); 
 
   // Determine the current theme based on both theme and color scheme
   let currentTheme;
@@ -66,6 +66,12 @@ function App() {
         currentTheme = darkGreyTheme;
     }
   }
+
+    // Whenever the colorScheme changes, update it in localStorage
+    useEffect(() => {
+      window.localStorage.setItem('colorScheme', colorScheme);
+    }, [colorScheme]);
+  
 
   return (
     <ThemeProvider theme={currentTheme}>

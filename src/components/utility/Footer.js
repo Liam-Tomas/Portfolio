@@ -42,22 +42,34 @@ const StyledIcon = styled(FontAwesomeIcon)`
 
 `
 
+const StyledLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+`;
+
+
 const FooterText = styled.p`
 
 `
 
 const Footer = () => {
-    return (
-        <FooterContainer>
-            <FooterContent>
-                <Divider />
-                <FooterFlex>
-                    <FooterText>&copy; {new Date().getFullYear()} Created and Designed by Liam Armstrong; ltarmstrong94@gmail.com</FooterText>
-                    <StyledIcon icon={faGithub} />
-                </FooterFlex>
-            </FooterContent>
-        </FooterContainer>
-    );
+  return (
+    <FooterContainer>
+      <FooterContent>
+        <Divider />
+        <FooterFlex>
+          <FooterText>&copy; {new Date().getFullYear()} Created and Designed by Liam Armstrong; ltarmstrong94@gmail.com</FooterText>
+          <StyledLink
+            href="https://github.com/Liam-Tomas"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <StyledIcon icon={faGithub} />
+          </StyledLink>
+        </FooterFlex>
+      </FooterContent>
+    </FooterContainer>
+  );
 };
 
 export default Footer;
