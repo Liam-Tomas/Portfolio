@@ -17,10 +17,7 @@ const StyledSun = styled(SunIcon)`
     &:hover {
         color: ${props => props.theme.primary};
 
-
     }
-
-
   }
 `
 

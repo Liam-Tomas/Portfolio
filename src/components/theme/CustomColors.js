@@ -1,60 +1,3 @@
-// // import flowerIMG from '../../images/flowerIMG.jpg'
-// // import flowerDarkIMG from '../../images/flowerDarkIMG.jpg'
-
-// export const lightTheme = {
-//     mode: 'light',
-//     primary:'#1976d2',
-//     primary: '#0957d0',
-//     secondary: 'rgb(1 99 155)',
-//     text: 'rgb(31 31 31)',
-//     textAlt: 'rgb(69 71 70)',
-//     textOpp: '#e3e3e3',
-//     textGrey: '#afb8c4',
-//     backgroundColor: '#f8fafd',
-//     backgroundColor: '#ffffff',
-//     card: '#f4f6fc',
-//     cardLight: '#e2e8f0',
-//     cardLighter: '#f4f6fc',
-//     cardLighter: '#ffffff',
-//     borderColor: '#e2e8f0',
-//     borderColor2: '#e2e8f0',
-//     hoverShadowColor: 'rgba(0, 0, 0, 0.2)',
-//     buttonHoverBackground: 'rgb(194 231 254)', // light blue for light theme hover
-//     OppHoverBackground: '#0957d0', // darker shade for dark theme hover
-//     homeBackground: 'rgb(194 231 254 / 40%)',
-//     // backgroundIMG: `url(${flowerIMG})`, // Light mode background image URL
-
-// }
-
-// export const darkTheme = {
-//     mode: 'dark',
-//     primary:'#1976d2',
-//     primary: '#0957d0',
-//     secondary:'#afcbfb',
-//     secondary:'#c2e7fe',
-//     text: '#e3e3e3',
-//     textAlt: 'rgb(197 199 197)',
-//     textOpp: '#072e6f',
-//     textGrey: '#afb8c4',
-//     backgroundColor: '#1f1f1f',
-//     card: '#28292a',
-//     cardLighter: '#2d2f31',
-//     cardLight: '#454746',
-//     borderColor: '#28292a',
-//     borderColor2: 'rgb(197 199 197)',
-//     hoverShadowColor: '#afb8c4', 
-//     buttonHoverBackground: '#004a77', // darker shade for dark theme hover
-//     OppHoverBackground: 'rgb(194 231 254)',
-//     homeBackground: '#262626',
-//     // backgroundIMG: `url(${flowerDarkIMG})`, // Dark mode background image URL
-
-
-// }
-
-
-// import flowerIMG from '../../images/flowerIMG.jpg'
-// import flowerDarkIMG from '../../images/flowerDarkIMG.jpg'
-
 export const lightTheme = {
     mode: 'light',
     primary: '#386a20',
@@ -138,20 +81,20 @@ export const redLightTheme = {
     primary: '#9c4246',
     secondary: '#2d1517',
     text: '#1f1f1f',
-    textAlt: 'rgb(69 71 70)', // You might want to adjust this for the red theme
+    textAlt: 'rgb(69 71 70)',
     textOpp: '#fcfcfc',
     textGrey: '#afb8c4',
     backgroundColor: '#fcfcfd',
     card: '#f3eaeb',
     cardLight: '#f5f0f0',
-    cardLighter: '#ffffff', // Adjust if needed
-    borderColor: '#e2e8f0', // Adjust if needed
-    borderColor2: '#e2e8f0', // Adjust if needed
-    hoverShadowColor: 'rgba(0, 0, 0, 0.2)', // Adjust if needed
-    buttonHoverBackground: '#f1cecd', // Adjust for red theme
+    cardLighter: '#ffffff', 
+    borderColor: '#e2e8f0', 
+    borderColor2: '#e2e8f0',
+    hoverShadowColor: 'rgba(0, 0, 0, 0.2)', 
+    buttonHoverBackground: '#f1cecd',
     OppHoverBackground: '#0957d0', 
-    homeBackground: 'rgb(194 231 254 / 40%)', // Adjust for red theme
-    overlayColor: 'rgb(156 66 70 / 20%)', // Adjust for red theme
+    homeBackground: 'rgb(194 231 254 / 40%)',
+    overlayColor: 'rgb(156 66 70 / 20%)',
     overlayColor: 'rgb(241 206 205 / 55%)',
     buttonHover: '#a9555a',
     buttonHoverSecondary: '#e4bfbf',
@@ -167,22 +110,19 @@ export const redDarkTheme = {
     primary: '#ffb3b4',
     secondary: '#ffdad9',
     text: '#ede0df',
-    textAlt: 'rgb(197 199 197)', // Adjust if needed
-    textOpp: '#1a1c18', // Adjust if needed
-    textGrey: '#afb8c4', // Adjust if needed
+    textAlt: 'rgb(197 199 197)', 
+    textOpp: '#1a1c18', 
+    textGrey: '#afb8c4',
     backgroundColor: '#211a1a',
     card: 'rgb(54 42 41)',
     cardLight: 'rgb(47 37 37)',
-    // cardLighter: '#2d2f31', // Adjust if needed
-    // borderColor: '#28292a', // Adjust if needed
-    // borderColor2: 'rgb(197 199 197)', // Adjust if needed
     hoverShadowColor: '#afb8c4', // Adjust for red theme
     buttonHoverBackground: '#5c3f3f', 
     buttonHover: '#ff9fa0',
     buttonHoverSecondary: '#6e5555',
-    OppHoverBackground: 'rgb(194 231 254)', // Adjust for red theme
-    homeBackground: '#262626', // Adjust for red theme
-    overlayColor: 'rgb(255 179 180 / 25%)', // Adjust for red theme
+    OppHoverBackground: 'rgb(194 231 254)',
+    homeBackground: '#262626', 
+    overlayColor: 'rgb(255 179 180 / 25%)',
     overlayColor: 'rgb(92 63 63 / 55%)',
     redColor: '#ffb3b4',
     greenColor: '#9cd67d',
@@ -207,8 +147,8 @@ export const lightGreyTheme = {
     borderColor: '#e2e8f0',
     borderColor2: '#e2e8f0',
     hoverShadowColor: 'rgba(0, 0, 0, 0.2)',
-    buttonHoverBackground: '#d3dae1', // light blue for light theme hover
-    OppHoverBackground: '#004a77', // darker shade for dark theme hover
+    buttonHoverBackground: '#d3dae1',
+    OppHoverBackground: '#004a77', 
     homeBackground: 'rgb(194 231 254 / 40%)',
     overlayColor: 'rgb(13 116 144 / 30%)',
     textOpp: '#fff',
@@ -248,7 +188,7 @@ export const darkGreyTheme = {
     greenColor: '#9cd67d',
     redColor: '#ffb3b4',
     blueColor: '#0ca5e9',
-    textOpp: 'rgb(31 31 31)', // Adjust if needed
+    textOpp: 'rgb(31 31 31)',
     overlayColor: 'rgb(77 87 108 / 50%)',
     textDark: '#656a6f',
     buttonHover: '#58d6a9',
@@ -271,8 +211,8 @@ export const lightBlueTheme = {
     borderColor: '#e2e8f0',
     borderColor2: '#e2e8f0',
     hoverShadowColor: 'rgba(0, 0, 0, 0.2)',
-    buttonHoverBackground: '#aacebc', // light blue for light theme hover
-    OppHoverBackground: '#004a77', // darker shade for dark theme hover
+    buttonHoverBackground: '#aacebc',
+    OppHoverBackground: '#004a77', 
     homeBackground: 'rgb(194 231 254 / 40%)',
     overlayColor: 'rgb(130 178 154 / 35%)',
     textOpp: '#fff',
@@ -298,12 +238,10 @@ export const darkBlueTheme = {
     cardLight: '#191a2e',
     cardLight: 'rgb(27 38 56)',
     cardLighter: '#2d2f31',
-
     borderColor: '#28292a',
     borderColor2: 'rgb(197 199 197)',
     hoverShadowColor: '#afb8c4', 
     activeColor: '#3730a3',
-    
     buttonHoverBackground: '#434c5f',
     OppHoverBackground: 'rgb(194 231 254)',
     homeBackground: '#262626',
@@ -312,10 +250,10 @@ export const darkBlueTheme = {
     greenColor: '#9cd67d',
     blueColor: '#0ca5e9',
     redColor: '#ffb3b4',
-    textOpp: 'rgb(31 31 31)', // Adjust if needed
+    textOpp: 'rgb(31 31 31)',
     overlayColor: 'rgb(12 165 233 / 33%)',
     textDark: '#656a6f',
-    buttonHover: '#58d6a9',
+    buttonHover: '#0990cc',
     buttonHoverSecondary: '#4c576c',
 }
 

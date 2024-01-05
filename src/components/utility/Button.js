@@ -20,10 +20,10 @@ const RippleSpan = styled.span`
 `;
 
 const StyledButton = styled.button`
-    padding: ${props => props.padding || '12px 17px'};
+    padding: ${props => props.$padding || '12px 17px'};
     font-family: 'Metropolis', sans-serif;
     font-weight: 500;
-    background-color: ${props => props.backgroundColor || props.theme.primary}; // Use backgroundColor prop
+    background-color: ${props => props.$backgroundColor || props.theme.primary}; // Use backgroundColor prop
     color: ${props => props.color || props.theme.textOpp};
     border: none;
     border-radius: 50px;
@@ -35,7 +35,7 @@ const StyledButton = styled.button`
     overflow: hidden;
 
     &:hover {
-        background-color: ${props => props.hoverBackgroundColor || props.theme.buttonHover}; // Use backgroundColor prop
+        background-color: ${props => props.$hoverBackgroundColor || props.theme.buttonHover}; // Use backgroundColor prop
 
         // background: ${props => props.theme.buttonHover};
     }
@@ -45,6 +45,11 @@ const StyledButton = styled.button`
         color: #9e9e9e;
         cursor: not-allowed;
     }
+
+    @media (max-width: 868px) {
+        font-size: 1rem;
+        padding: 15px 18px;
+      }
 `;
 
 const StyledIcon = styled(FontAwesomeIcon)`
@@ -66,11 +71,11 @@ const Button = ({ children, padding, fontSize, backgroundColor, color, hoverBack
     return (
         <StyledButton 
             onClick={handleClick} 
-            padding={padding}
+            $padding={padding}
             fontSize={fontSize}
-            backgroundColor={backgroundColor}
+            $backgroundColor={backgroundColor}
             color={color}
-            hoverBackgroundColor={hoverBackgroundColor}
+            $hoverBackgroundColor={hoverBackgroundColor}
             {...props}
         >
             {icon && <StyledIcon icon={icon} />}

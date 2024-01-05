@@ -13,7 +13,7 @@ const backgroundColors = {
 };
 
 const ModalBackdrop = styled.div`
-  display: ${(props) => (props.show ? 'block' : 'none')};
+  display: ${(props) => (props.$show ? 'block' : 'none')};
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -50,8 +50,8 @@ const ModalContainer = styled.div`
   }
 
   @media (max-width: 868px) {
-    top: 145px;
-    left: 200px;
+    top: 192px;
+    left: 150px;
   }
 `;
 
@@ -97,7 +97,7 @@ const ColorSchemeModal = ({ isModalOpen, toggleModal, setColorScheme }) => {
     };
 
     return (
-        <ModalBackdrop show={isModalOpen} onClick={toggleModal}>
+        <ModalBackdrop $show={isModalOpen} onClick={toggleModal}>
             <ModalContainer onClick={(e) => e.stopPropagation()}>
                     <TopRow>
                         <ColorOption color="green" onClick={() => handleColorChange('green')}></ColorOption>

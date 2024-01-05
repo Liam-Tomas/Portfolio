@@ -77,7 +77,7 @@ function App() {
           <ContentContainer>
             <MainContent>
               <Routes>
-                <Route path="/" element={<HomePage theme={theme} themeToggler={themeToggler} setColorScheme={setColorScheme} />} />
+              <Route path="/" element={<HomePage theme={theme} themeToggler={themeToggler} setColorScheme={setColorScheme} />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 {/* ...other routes... */}

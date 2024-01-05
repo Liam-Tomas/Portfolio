@@ -39,7 +39,8 @@ const ProjectContainer = styled.div`
 
     @media (max-width: 868px) {
         gap: 40px;
-        min-height: 175vh;
+        min-height: 0vh;
+        margin-bottom: 80px;
 
     }
 `;
@@ -202,7 +203,7 @@ const ProjectTwoIMG = styled.div`
 
 const ProjectThreeIMG = styled.div`
     width: 100%;
-    height: 320px; // Set a specific height for the image
+    height: 325px; // Set a specific height for the image
     background: url(${(props) => props.theme.mode === 'dark' ? DSIMG : DSIMGLight}) no-repeat center center;
     background-size: cover;
     filter: grayscale(100%);
@@ -264,7 +265,7 @@ const IMGContainer3 = styled.div`
 
 const ProjectIMG2 = styled.div`
     width: 100%;
-    height: 320px; // Set a specific height for the image
+    height: 325px; // Set a specific height for the image
     background: url(${(props) => props.theme.mode === 'dark' ? SFMapDarkIMG : SFMapLightIMG}) no-repeat center center;
     background-size: cover;
     filter: grayscale(100%);
@@ -392,7 +393,6 @@ const HomeSubText = styled.p`
     letter-spacing: -1px;
     margin: 0px;
     margin-bottom: 70px;
-
     @media (max-width: 868px) {
         font-size: 1.1rem;
         margin-top: 5px;

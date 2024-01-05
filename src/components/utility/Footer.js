@@ -21,7 +21,7 @@ const FooterContent = styled.div`
   color: ${props => props.theme.buttonHoverBackground};
 
   @media (max-width: 868px) {
-    font-size: .8rem;
+    font-size: .75rem;
   }
 `;
 
@@ -30,6 +30,9 @@ const FooterFlex = styled.div`
     align-items: center;
     gap: 10px;
     justify-content: center;
+    @media (max-width: 868px) {
+        padding: 0px 20px;
+      }
 
 `;
 

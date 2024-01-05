@@ -30,17 +30,13 @@ const NavbarContainer = styled.div`
 
   @media (max-width: 868px) {
     width: 300px;
-    transform: translateX(${props => props.isOpen ? '0' : '-100%'});
+    transform: translateX(${props => props.$isOpen ? '0' : '-100%'});
     transition: transform 0.2s ease;
     z-index: 10000;
   }
 
 `;
 
-const NavbarLink = styled(Link)`
-  text-decoration: none;
-  color: inherit; // Ensures the link color matches your theme
-`;
 
 
 const NavbarItems = styled.div`
@@ -59,14 +55,24 @@ const StyledIcon = styled(FontAwesomeIcon)`
   font-size: 1rem;
   padding: 7.5px 17.5px;
   border-radius: 20px;
-  background-color: ${(props) => props.isActive ? props.theme.buttonHoverBackground : 'none'};
-  color: ${(props) => props.isActive ? props.theme.primary : props.theme.text};
+  background-color: ${(props) => props.$isActive ? props.theme.buttonHoverBackground : 'none'};
+  color: ${(props) => props.$isActive ? props.theme.primary : props.theme.text};
   transition: background-color 0.15s;
   @media (max-width: 868px) {
-    background-color: ${(props) => props.isActive ? 'none': 'none'};
+    background-color: ${(props) => props.$isActive ? 'none' : 'none'};
 
   }
 `
+
+const NavbarLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    color: ${props => props.theme.text};
+    ${StyledIcon} {
+      background-color: ${props => props.theme.buttonHoverBackground};
+    }
+  `;
 
 const NavbarItem = styled.div`
   position: relative;
@@ -83,12 +89,11 @@ const NavbarItem = styled.div`
   // overflow: hidden;
   color: ${props => props.theme.secondary};
   user-select: none;
-  color: ${(props) => props.isActive ? props.theme.text : 'none'};
-  background-color: ${(props) => props.isActive ? 'none': props.theme.card};
-
+  color: ${(props) => props.$isActive ? props.theme.text : 'none'};
+  background-color: ${(props) => props.$isActive ? 'none' : props.theme.card};
   @media (max-width: 868px) {
     width: 215px;
-    background-color: ${(props) => props.isActive ? props.theme.buttonHoverBackground : 'none'};
+    background-color: ${(props) => props.$isActive ? props.theme.buttonHoverBackground : 'none'};
     border-radius: 20px;
     padding: 4px 25px 4px 0px;
     gap:5px;
@@ -98,13 +103,15 @@ const NavbarItem = styled.div`
         background-color: ${props => props.theme.card};
      
       }
-  }
-
   &:hover {
     color: ${props => props.theme.text};
     ${StyledIcon} {
       background-color: ${props => props.theme.buttonHoverBackground};
     }
+
+  }
+
+
   &:active {
     color: ${props => props.theme.text};
     
@@ -186,7 +193,7 @@ const MobileHamburgerButton = styled(HamburgerButton)`
 `;
 
 const Navbar = ({ theme, toggleTheme, setColorScheme }) => {
-  const location = useLocation(); // This line gets the current location
+  const location = useLocation();
   const [isSubmenuVisible, setIsSubmenuVisible] = useState(false);
   let navbarContainerRef = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -231,10 +238,10 @@ const Navbar = ({ theme, toggleTheme, setColorScheme }) => {
   };
 
 
-    // Handler to close both the submenu and the main menu
-    const closeMenu = () => {
-      setIsMenuOpen(false); // Close the main menu
-    };
+  // Handler to close both the submenu and the main menu
+  const closeMenu = () => {
+    setIsMenuOpen(false); // Close the main menu
+  };
 
   const handleHomeClick = (e) => {
     closeSubmenu();
@@ -254,17 +261,17 @@ const Navbar = ({ theme, toggleTheme, setColorScheme }) => {
 
   return (
     <div>
-      <NavbarContainer isOpen={isMenuOpen} ref={navbarContainerRef}>
-      <MobileHamburgerButton onClick={toggleMenu}>
+      <NavbarContainer $isOpen={isMenuOpen} ref={navbarContainerRef}>
+        <MobileHamburgerButton onClick={toggleMenu}>
           <FontAwesomeIcon icon={faBars} />
         </MobileHamburgerButton>
         <NavbarItems>
           <NavbarLink to="/">
             <NavbarItem
               onClick={handleHomeClick}
-              isActive={location.pathname === '/'}
+              $isActive={location.pathname === '/'}
             >
-              <StyledIcon icon={faHome} isActive={location.pathname === '/'}
+              <StyledIcon icon={faHome} $isActive={location.pathname === '/'}
               />
               Home
             </NavbarItem>
@@ -272,15 +279,15 @@ const Navbar = ({ theme, toggleTheme, setColorScheme }) => {
           <NavbarLink to="/about">
             <NavbarItem
               onClick={handleAboutClick}
-              isActive={location.pathname === '/about'}
+              $isActive={location.pathname === '/about'}
             >
-              <StyledIcon icon={faUser} isActive={location.pathname === '/about'} />
+              <StyledIcon icon={faUser} $isActive={location.pathname === '/about'} />
               Resume
             </NavbarItem>
           </NavbarLink>
           <NavbarLink to="/contact">
-            <NavbarItem onClick={handleAboutClick} isActive={location.pathname === '/contact'}>
-              <StyledIcon icon={faEnvelope} isActive={location.pathname === '/contact'} />
+            <NavbarItem onClick={handleAboutClick} $isActive={location.pathname === '/contact'}>
+              <StyledIcon icon={faEnvelope} $isActive={location.pathname === '/contact'} />
               Contact
             </NavbarItem>
           </NavbarLink>
@@ -304,7 +311,7 @@ const Navbar = ({ theme, toggleTheme, setColorScheme }) => {
             </SubMenu>
           )}
           <NavbarItem ref={colorItemRef} onClick={toggleModal}>
-            <StyledIcon icon={faPalette} isActive={isModalOpen} />
+            <StyledIcon icon={faPalette} $isActive={isModalOpen} />
             Color
           </NavbarItem>
           <ColorSchemeModal

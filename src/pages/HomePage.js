@@ -58,7 +58,6 @@ const MainContainer = styled.div`
     margin-top: 70px;
     width: 94%;
 
-
   }
 
 `;
@@ -90,6 +89,7 @@ const HomeHeader = styled.div`
 
     @media (max-width: 868px) {
         margin: 0px 0px;
+        padding: 2rem;
         text-align: left;
     }
 `
