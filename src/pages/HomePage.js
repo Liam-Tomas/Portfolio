@@ -165,7 +165,7 @@ const HomePage = ({ themeVariant }) => {
                     <HomeHeader>
                         <HomeTopText>Hi, my name is</HomeTopText>
                         <HomeTitle>Liam Armstrong</HomeTitle>
-                        <HomeSubText>Currently a senior Computer Science student, I combine technical skill in programming and data management with a unique analytical perspective gained from my background in international economics and policy. Check out some of my work below.</HomeSubText>
+                        <HomeSubText>Currently a senior Computer Science student, I combine technical skill in software and data analytics with a unique approach to problem-solving shaped by my background in international economics and policy. Check out some of my work below.</HomeSubText>
                         <MyButtonContainer>
                             <a href="https://github.com/Liam-Tomas" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
                                 <MyButton
