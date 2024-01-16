@@ -140,7 +140,7 @@ function AboutPage({ themeVariant }) {
                         <HomeSubText>Click the link below to view PDF version of my resume.</HomeSubText>
                         <MyButtonContainer>
                             <StyledLink
-                                href="https://drive.google.com/file/d/17p897CpNct0murPcUoUYRIe-A_GMKVyk/view?usp=sharing"
+                                href="https://drive.google.com/file/d/13pPeWFiXTV3u5Eq0-eT1V-Y9G-93W1hJ/view?usp=sharing"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >                                <MyButton padding="16px 20px" fontSize="1.1rem" icon={faFilePdf}>
